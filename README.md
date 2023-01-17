@@ -102,39 +102,150 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ⇒Q(t+1)=T⊕Q(t)
 
 ### Procedure
-/* write all the steps invloved */
+
+1.Using nand gates and wires construct sr flip flop.
+
+2.Repeat same steps to construct JK,D,T flipflops.
+
+3.Find Rtl logic and timing diagram for all flipflops.
+
+4.end the program
 
 
 
 ### PROGRAM 
-/*
-Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
 
+Program for flipflops and verify its truth table in quartus using Verilog programming.
+Developed by: KANISHKAR M
+RegisterNumber: 22007816
 
+PROGRAM FOR SR FLIPFLOPs
 
+```
+module SR(s,r,clk,q,qbar);
+input s,r,clk;
+output q,qbar;
+wire x,y;
+nand(x,s,clk);
+nand(y,r,clk);
+nand(q,x,qbar);
+nand(qbar,y,q);
+endmodule
 
+```
 
+### RTL LOGIC FOR FLIPFLOPS
 
-### RTL LOGIC FOR FLIPFLOPS 
+RTL for SR Flipflop
 
-
-
-
-
-
-
+![image](https://user-images.githubusercontent.com/118886772/212930732-7417236c-67b8-46b1-ad4e-ef37cac9c534.png)
 
 
 ### TIMING DIGRAMS FOR FLIP FLOPS 
 
+Timing diagram for SR Flipflop
+
+![image](https://user-images.githubusercontent.com/118886772/212930921-6d39ad71-c23f-4266-a50a-47cec4144905.png)
+
+### PROGRAM 
+
+Program for flipflops and verify its truth table in quartus using Verilog programming.
+Developed by: KANISHKAR M
+RegisterNumber: 22007816
+
+PROGRAM FOR JK FLIPFLOPs
+
+```
+module JK (j,k,clk,q,qbar);
+input j,k,clk;
+output q,qbar;
+wire x,y;
+nand(x,j,clk,qbar);
+nand(y,k,clk,q);
+nand(q,x,qbar);
+nand(qbar,y,q);
+endmodule
+```
+
+### RTL LOGIC FOR FLIPFLOPS
+
+RTL for JK flipflop
+
+![image](https://user-images.githubusercontent.com/118886772/212932616-cccc89cf-2683-4c1c-bf60-7b0c7e56fcab.png)
+
+### TIMING DIGRAMS FOR FLIP FLOPS 
+
+Timing diagram for JK flipflop
+
+![image](https://user-images.githubusercontent.com/118886772/212932797-f48de3ff-3027-4991-bc86-5a2ee6c0b2eb.png)
+
+### PROGRAM 
+
+Program for flipflops and verify its truth table in quartus using Verilog programming.
+Developed by: KANISHKAR M
+RegisterNumber: 22007816
+
+PROGRAM FOR D FLIPFLOPs
+
+```
+module D(d,clk,q,qbar);
+input d,clk;
+output q,qbar;
+assign dbar = !d;
+wire x,y;
+nand(x,d,clk);
+nand(y,dbar,clk);
+nand(q,x,qbar);
+nand(qbar,y,q);
+endmodule
+
+```
+
+### RTL LOGIC FOR FLIPFLOPS
+
+RTL for D flipflop
+
+![image](https://user-images.githubusercontent.com/118886772/212933205-634aca12-9737-4da3-b7b2-3746ba6e9dfc.png)
+
+### TIMING DIGRAMS FOR FLIP FLOPS 
+
+Timing diagram for D flipflop
+
+![image](https://user-images.githubusercontent.com/118886772/212933438-f0fcdc0b-542b-4578-83c6-c07c47b40a3b.png)
+
+### PROGRAM 
+
+Program for flipflops and verify its truth table in quartus using Verilog programming.
+Developed by: KANISHKAR M
+RegisterNumber: 22007816
+
+PROGRAM FOR T FLIPFLOPs
+
+```
+module T(t,clk,q,qbar);
+input t,clk;
+output q,qbar;
+wire s,r;
+nand(s,t,clk,qbar);
+nand(r,t,clk,q);
+nand(q,s,qbar);
+nand(qbar,r,q);
+endmodule
+```
+
+### RTL LOGIC FOR FLIPFLOPS
+
+RTL for T FLIPFLOP
+
+![image](https://user-images.githubusercontent.com/118886772/212934083-81f5408c-7855-450a-bf79-b00841bb1823.png)
 
 
+### TIMING DIGRAMS FOR FLIP FLOPS 
 
+Timing diagram for T flipflops
 
-
-
+![image](https://user-images.githubusercontent.com/118886772/212934253-174a2968-a296-46ce-b8f7-52f2219a18ab.png)
 
 ### RESULTS 
+
+Thus, the program for flipflops is implemented and its functional table is successfully verified in quartus using Verilog programming.
